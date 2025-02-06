@@ -8,12 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* 화면 높이를 100%로 설정 */
-    position: relative; /* 자식 요소가 절대 위치를 가질 수 있도록 설정 */
-}
-
-h1 {
-    text-align: center;
-    color: #4CAF50;
+    justify-content: space-between; /* 요소들을 위아래로 배치 */
 }
 
 .header {
@@ -28,6 +23,7 @@ h1 {
 .navbar {
     display: flex;
     align-items: center;
+    position: relative; /* 드롭다운 메뉴 위치 설정을 위해 필요 */
 }
 
 .navbar__button {
@@ -48,44 +44,33 @@ h1 {
 }
 
 .menu {
-    list-style: none;
+    list-style: none; /* 리스트 스타일 제거 */
     padding: 0;
     display: none; /* 기본적으로 숨김 */
+    position: absolute; /* 햄버거 버튼 아래에 위치하도록 설정 */
+    top: 100%; /* 햄버거 버튼의 아래쪽에 위치 */
+    left: 0; /* 좌측 정렬 */
+    background-color: #fec1c1; /* 드롭다운 배경색 */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    width: 250px; /* 드롭다운 너비 설정 */
+}
+
+.menu.active {
+    display: block; /* active 클래스가 있을 때 드롭다운 표시 */
 }
 
 .menu li {
-    display: inline;
-    margin: 0 10px;
-    font-size:xx-small;
+    display: block; /* 블록으로 표시하여 수직 배치 */
 }
 
 .menu li a {
-    text-decoration: none;
-    color: #000000;
+    padding: 10px 15px; /* 여백 추가 */
+    display: block; /* 블록으로 표시 */
+    color: #000; /* 텍스트 색상 */
+    text-decoration: none; /* 밑줄 제거 */
 }
 
-.music {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* 중앙 정렬 */
-    position: absolute; /* 절대 위치 설정 */
-    bottom: 0; /* 화면 아래에 고정 */
-    left: 50%; /* 수평 중앙 정렬 */
-    transform: translateX(-50%); /* 중앙 정렬을 위한 변환 */
-    z-index: 1000; /* 다른 요소 위에 표시 */
-    width: 100%; /* 전체 너비 사용 */
-    background-color: #ffd7d7; /* 배경색 추가 (선택 사항) */
-}
-
-/* 모바일에서의 스타일 조정 */
-@media (max-width: 600px) {
-    .music {
-        flex-direction: column; /* 세로 방향으로 배치 */
-        align-items: center; /* 가운데 정렬 */
-    }
-
-    .music audio {
-        margin-left: 0; /* 모바일에서 오디오 마진 제거 */
-        margin-top: 10px; /* 오디오 위에 여백 추가 */
-    }
+.menu li a:hover {
+    background-color: #f2f2f2; /* 호버 시 배경 색상 변경 */
 }
