@@ -1,88 +1,23 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
-    <title>사랑아</title>
     <meta charset="utf-8">
-    <a href="index.html"><h1>어둠으로 우리 달려가 봐요</h1></a>
-    <script src="카테고리 버튼.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>사랑아</title>
+    <link rel="stylesheet" href="st.css">
 </head>
-<style>
-    a { color: black; }
-    h1 {
-        text-align: center;
-        border-bottom: 2px solid rgb(0, 0, 0);
-        margin: 0;
-        padding: 20px;
-    }
-    body { background-color: rgb(255, 203, 203); }
-    h1 { background-color: rgb(255, 132, 132); }
-    ul { font-size: large; }
-    li { font-size: large; }
-    p { text-align: center; margin: 0; }
-    
-    .header {
-        display: flex;
-        justify-content: space-between; /* 양쪽 끝 정렬 */
-        align-items: center; /* 세로 중앙 정렬 */
-        padding: 10px 20px; /* 여백 추가 */
-    }
 
-    .music {
-        margin-left: auto; /* 오른쪽으로 밀기 */
-    }
-
-    .navbar {
-        position: relative;
-        display: inline-block;
-    }
-    .navbar__button {
-        cursor: pointer;
-        width: 30px;
-        height: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .line {
-        height: 3px;
-        background: black;
-        transition: all 0.3s ease;
-    }
-    .menu {
-        display: none; /* 기본적으로 숨김 */
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 300px; /* 메뉴 폭 조정 */
-        background: rgb(222, 222, 222);
-        padding: auto; /* 메뉴 내부 여백 */
-        list-style: none;
-        margin: 0;
-    }
-    .navbar.active .menu {
-        display: block; /* 버튼이 활성화되면 메뉴 표시 */
-    }
-</style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<body>    
-    <div class="btn"></div>
-    <div onclick="history.back();" class="page_cover"></div>
+<body>
+    <h1><a href="index.html">어둠으로 우리 달려가 봐요</a></h1> 
 
     <div class="header">
-        <label class="hamburger" for="toggle">
-            <div class="top"></div>
-            <div class="middle"></div>
-            <div class="bottom"></div>
-        </label>
-
         <div class="navbar" id="navbar">
-            <div class="navbar__button">
+            <div class="navbar__button" id="toggleButton">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <ul class="menu">
+            <ul class="menu" id="menu">
                 <li><a href="1.html">접속</a></li>
                 <li><a href="2.html">꿈꿀 수 있다면 어디라도</a></li>
                 <li><a href="3.html">프라하</a></li>
@@ -90,72 +25,56 @@
                 <li><a href="5.html">엉엉</a></li>
             </ul>
         </div>
-
         <div class="music">
-            <audio src="김사월-06-엉엉.mp3" autoplay loop controls id="myAudio"></audio>
+            <audio src="김사월-04-접속.mp3" autoplay loop controls id="myAudio"></audio>
         </div>
     </div>
-
-    <script>
-        const navbar = document.getElementById('navbar');
-        const button = navbar.querySelector('.navbar__button');
-        button.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    </script>
-
-    <br>
-    <div onclick="history.back();" class="close"></div>
-    <br><br><br><br><br><br>
+    <br><br><br><br><br>
     <p>
-        이번에는 내 이야기를 좀 해 볼까<br>
-        <br><br>
+        이번에는 내 이야기를 좀 해 볼까<br><br>
         외로움을 잘 타<br>
         눈치가 빠르면서도 누군가 떠나려 한다면<br>
-        그걸 모르는 척하지<br>
-        <br><br>
+        그걸 모르는 척하지<br><br>
         그래, 나는 미련해<br>
         사람 자체가 잔정이 많고 미련해<br>
-        아주 귀찮은 성격이지<br>
-        <br>
+        아주 귀찮은 성격이지<br><br>
         결핍 때문일까<br>
-        도대체 뭐 때문일까<br>
-        <br><br>
+        도대체 뭐 때문일까<br><br>
         인간관계는 버스와 같다고들 하지<br>
         내릴 사람은 내리고, 타는 사람은 타고<br>
         그게 자연스러운 건데도 말이야<br>
         나는 종점까지 향해<br>
-        기사님이 종점이라고 알려도<br>
-        <br>
-        그조차 정이 들어 내리지를 못하는 사람이야<br>
-        <br><br>
+        기사님이 종점이라고 알려도<br><br>
+        그조차 정이 들어 내리지를 못하는 사람이야<br><br>
         <b>밖은 너무 추우니까<br></b>
-        <br>
         따뜻한 곳에 오래 몸을 녹이고<br>
         내리는 사람을 보고 붙잡고<br>
         타는 사람을 보면 반기고<br>
-        그런 짓을 내내 해왔지<br>
-        <br><br>
+        그런 짓을 내내 해왔지<br><br>
         하지만 이제는 다르다고 해야 하나<br>
-        바운더리에 사람을 들이지 않아<br>
-        <br>
+        바운더리에 사람을 들이지 않아<br><br>
         버스 문을 안 열어 주지<br>
-        문을 여는 법을 잊은 것 같아<br>
-        <br><br>
+        문을 여는 법을 잊은 것 같아<br><br>
         하지만 너는 벌써 들이고 싶어<br>
-        들어와 주겠니<br>
-        <br>
+        들어와 주겠니<br><br>
         <b>영원하게 사랑할 사람<br></b>
-        <br>
-        그걸 너로 점찍고 싶어<br>
-        <br><br>
+        그걸 너로 점찍고 싶어<br><br>
         지금 버스 안까지 추워질 정도로<br>
-        문 활짝 열어 뒀어<br>
-        <br>
-        내 사랑아<br>
-        <br><br>
+        문 활짝 열어 뒀어<br><br>
+        내 사랑아<br><br>
         부담이라면 발만 걸쳐<br>
         천천히 운행할게<br>
     </p>
+
+    <script>
+        // 햄버거 버튼 클릭 시 메뉴 토글
+        const toggleButton = document.getElementById('toggleButton');
+        const menu = document.getElementById('menu');
+        
+        toggleButton.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+    <script src="bt.js"></script>
 </body>
 </html>

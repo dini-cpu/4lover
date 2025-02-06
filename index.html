@@ -1,83 +1,32 @@
 <!doctype html>
-<html>
+<html lang="ko">
 <head>
     <title>사랑아</title>
     <meta charset="utf-8">
-    <a href="index.html"><h1>어둠으로 우리 달려가 봐요</h1></a>
-    <script src="카테고리 버튼.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="st.css">
+    <style>
+        /* 메뉴 기본 스타일 */
+        .menu {
+            display: none; /* 기본적으로 숨김 */
+        }
+        .menu.active {
+            display: block; /* active 클래스가 있을 때 보이도록 설정 */
+        }
+    </style>
 </head>
-<style>
-    a { color: black; }
-    h1 {
-        text-align: center;
-        border-bottom: 2px solid rgb(0, 0, 0);
-        margin: 0;
-        padding: 20px;
-        background-color: rgb(255, 132, 132);
-    }
-    body { background-color: rgb(255, 203, 203); }
-    ul { font-size: large; }
-    li { font-size: large; }
-    p { text-align: center; margin: 0; }
-
-    .header {
-        display: flex;
-        justify-content: space-between; /* 양쪽 끝 정렬 */
-        align-items: center; /* 세로 중앙 정렬 */
-        padding: 10px 20px; /* 여백 추가 */
-    }
-
-    .music {
-        margin-left: auto; /* 오른쪽으로 밀기 */
-    }
-
-    .navbar {
-        position: relative;
-        display: inline-block;
-    }
-    .navbar__button {
-        cursor: pointer;
-        width: 30px;
-        height: 24px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .line {
-        height: 3px;
-        background: black;
-        transition: all 0.3s ease;
-    }
-    .menu {
-        display: none; /* 기본적으로 숨김 */
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 300px; /* 메뉴 폭 조정 */
-        background: rgb(222, 222, 222);
-        padding: auto; /* 메뉴 내부 여백 */
-        list-style: none;
-        margin: 0;
-    }
-    .navbar.active .menu {
-        display: block; /* 버튼이 활성화되면 메뉴 표시 */
-    }
-</style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>
-    <div class="btn"></div>
-    <div onclick="history.back();" class="page_cover"></div>
+    <h1><a href="index.html">어둠으로 우리 달려가 봐요</a></h1> 
 
     <div class="header">
         <div class="navbar" id="navbar">
-            <div class="navbar__button">
+            <div class="navbar__button" id="toggleButton">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
             </div>
-            <ul class="menu">
+            <ul class="menu" id="menu">
                 <li><a href="1.html">접속</a></li>
                 <li><a href="2.html">꿈꿀 수 있다면 어디라도</a></li>
                 <li><a href="3.html">프라하</a></li>
@@ -85,17 +34,18 @@
                 <li><a href="5.html">엉엉</a></li>
             </ul>
         </div>
-
         <div class="music">
             <audio src="김사월-02-연인에게.mp3" autoplay loop controls id="myAudio"></audio>
         </div>
     </div>
 
     <script>
-        const navbar = document.getElementById('navbar');
-        const button = navbar.querySelector('.navbar__button');
-        button.addEventListener('click', () => {
-            navbar.classList.toggle('active');
+        // 햄버거 버튼 클릭 시 메뉴 토글
+        const toggleButton = document.getElementById('toggleButton');
+        const menu = document.getElementById('menu');
+        
+        toggleButton.addEventListener('click', () => {
+            menu.classList.toggle('active');
         });
     </script>
 
