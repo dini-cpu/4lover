@@ -22,6 +22,9 @@
   position: absolute;
   left: 50%;
   transform : translateX(-50%);}
+  .music {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
@@ -34,7 +37,10 @@
         <li><a href="4.html">향기</a></li>
         <li><a href="5.html">엉엉</a></li>
     </ul>
-    <audio src="김사월-05-꿈꿀 수 있다면 어디라도.mp3"autoplay></audio>
+    <div class="music">
+        <audio src="김사월-05-꿈꿀 수 있다면 어디라도.mp3" autoplay loop controls id="myAudio"></audio>
+        </div>
+        <br><br><br><br><br><br>
     <p>
         문득 떠올랐지<br>
         너의 이름은 무슨 뜻일까<br>

@@ -22,13 +22,16 @@
   position: absolute;
   left: 50%;
   transform : translateX(-50%);}
+  .music {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */}
 
     </style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <body>    
-    <audio src="김사월-02-연인에게.mp3" autoplay></audio>
+    
     <ul>
         <li><a href="1.html">접속</a></li>
         <li><a href="2.html">꿈꿀 수 있다면 어디라도</a></li>
@@ -36,6 +39,10 @@
         <li><a href="4.html">향기</a></li>
         <li><a href="5.html">엉엉</a></li>
     </ul>
+    <div class="music">
+        <audio src="김사월-02-연인에게.mp3" autoplay loop controls id="myAudio"></audio>
+        </div>
+        <br><br><br><br><br><br>
     <img src="486.jpg" width="100%">
 </body>
 </html>

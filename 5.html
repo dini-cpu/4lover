@@ -22,12 +22,14 @@
   position: absolute;
   left: 50%;
   transform : translateX(-50%);}
-
+.music {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */}
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
    
-    <audio src="김사월-06-엉엉.mp3" autoplay></audio>
+    
     <ul>
         <li><a href="1.html">접속</a></li>
         <li><a href="2.html">꿈꿀 수 있다면 어디라도</a></li>
@@ -36,8 +38,11 @@
         <li><a href="5.html">엉엉</a></li>
         
     </ul>
-
-<p>
+        <div class="music">
+        <audio src="김사월-06-엉엉.mp3" autoplay loop controls id="myAudio"></audio>
+        </div>
+        <br><br><br><br><br><br>
+        <p>
     이번에는 내 이야기를 좀 해 볼까<br>
     <br><br>
     외로움을 잘 타<br>
