@@ -56,7 +56,7 @@ h1 {
 .menu li {
     display: inline;
     margin: 0 10px;
-    font-size: smaller;
+    font-size:xx-small;
 }
 
 .menu li a {
