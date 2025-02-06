@@ -5,6 +5,10 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 화면 높이를 100%로 설정 */
+    position: relative; /* 자식 요소가 절대 위치를 가질 수 있도록 설정 */
 }
 
 h1 {
@@ -62,8 +66,25 @@ h1 {
 .music {
     display: flex;
     align-items: center;
+    justify-content: center; /* 중앙 정렬 */
+    position: absolute; /* 절대 위치 설정 */
+    bottom: 0; /* 화면 아래에 고정 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬을 위한 변환 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+    width: 100%; /* 전체 너비 사용 */
+    background-color: #ffd7d7; /* 배경색 추가 (선택 사항) */
 }
 
-.music audio {
-    margin-left: 20px;
+/* 모바일에서의 스타일 조정 */
+@media (max-width: 600px) {
+    .music {
+        flex-direction: column; /* 세로 방향으로 배치 */
+        align-items: center; /* 가운데 정렬 */
+    }
+
+    .music audio {
+        margin-left: 0; /* 모바일에서 오디오 마진 제거 */
+        margin-top: 10px; /* 오디오 위에 여백 추가 */
+    }
 }
